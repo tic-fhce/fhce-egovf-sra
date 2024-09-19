@@ -8,6 +8,8 @@ import com.example.fhceegovfsra.model.Ambiente;
 import com.example.fhceegovfsra.model.Evento;
 import com.example.fhceegovfsra.model.Requerimiento;
 import com.example.fhceegovfsra.model.Tipo;
+import com.example.fhceegovfsra.object.evento.EventoCompleteDTO;
+import com.example.fhceegovfsra.object.evento.EventoConfirmDTO;
 import com.example.fhceegovfsra.object.evento.EventoRequestDTO;
 import com.example.fhceegovfsra.object.evento.EventoResponseDTO;
 import com.example.fhceegovfsra.service.EventoService;
@@ -61,6 +63,47 @@ public class EventoServiceImpl implements EventoService {
   @Transactional
   public List<EventoResponseDTO> listar() {
     List<Evento> eventos = eventoDAO.findAll();
+    return eventos.stream().map(evento -> modelMapper.map(evento, EventoResponseDTO.class)).toList();
+  }
+
+  @Transactional
+  public List<EventoResponseDTO> listarPendientes() {
+    List<Evento> eventos = eventoDAO.findAllEventosPendientes();
+    return eventos.stream().map(evento -> modelMapper.map(evento, EventoResponseDTO.class)).toList();
+  }
+
+  @Transactional
+  public List<EventoResponseDTO> listarConfirmados() {
+    List<Evento> eventos = eventoDAO.findAllEventosConfirmados();
+    return eventos.stream().map(evento -> modelMapper.map(evento, EventoResponseDTO.class)).toList();
+  }
+
+  @Transactional
+  public EventoResponseDTO completarEvento(EventoCompleteDTO eventoConfirmDTO) {
+    Evento evento = eventoDAO.findById(eventoConfirmDTO.getIdEvento())
+        .orElseThrow(() -> new RuntimeException("Evento no encontrado"));
+    evento.setCite(eventoConfirmDTO.getCite());
+    evento.setReferencia(eventoConfirmDTO.getReferencia());
+    evento.setHojaRuta(eventoConfirmDTO.getHojaRuta());
+    evento.setEstado(2);
+    eventoDAO.save(evento);
+    return modelMapper.map(evento, EventoResponseDTO.class);
+  }
+
+  @Transactional
+  public EventoResponseDTO confirmarEvento(EventoConfirmDTO eventoConfirmDTO) {
+    Evento evento = eventoDAO.findById(eventoConfirmDTO.getIdEvento())
+        .orElseThrow(() -> new RuntimeException("Evento no encontrado"));
+    List<Requerimiento> requerimientos = requerimientoDAO.findAllById(eventoConfirmDTO.getIdsRequerimientos());
+    evento.setEstado(1);
+    evento.setRequerimientos(requerimientos);
+    eventoDAO.save(evento);
+    return modelMapper.map(evento, EventoResponseDTO.class);
+  }
+
+  @Transactional
+  public List<EventoResponseDTO> listarTerminados() {
+    List<Evento> eventos = eventoDAO.findAllEventosTerminados();
     return eventos.stream().map(evento -> modelMapper.map(evento, EventoResponseDTO.class)).toList();
   }
 

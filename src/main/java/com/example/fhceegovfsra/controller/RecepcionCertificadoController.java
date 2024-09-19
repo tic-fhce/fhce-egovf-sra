@@ -54,16 +54,4 @@ public class RecepcionCertificadoController {
     }
   }
 
-  //// @GetMapping("/recepcion-certificado/{cif}")
-  // @GetMapping("/recepcion-certificado")
-  // public ResponseEntity<List<UsuarioCertificadoResponse>>
-  //// findByCif(@RequestParam Long cif) {
-  // try {
-  // return new ResponseEntity<>(this.recepcionCertificadoService.findByCif(cif),
-  //// HttpStatus.OK);
-  // } catch (Exception e) {
-  // return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-  // }
-  // }
-
 }
