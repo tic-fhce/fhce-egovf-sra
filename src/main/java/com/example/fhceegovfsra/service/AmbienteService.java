@@ -9,4 +9,5 @@ public interface AmbienteService {
   List<AmbienteResponseDTO> listar();
 
   AmbienteResponseDTO agregarAmbiente(AmbienteRequestDTO ambienteDTO);
+
 }
