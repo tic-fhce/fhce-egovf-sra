@@ -55,40 +55,4 @@ public class AsistenciaUsuarioController {
     }
   }
 
-  // @GetMapping("/asistencia-usuarios")
-  // public ResponseEntity<List<AsistenciaUsuarioDTO>> listar() {
-  // try {
-  // return new ResponseEntity<>(this.asistenciaUsuarioService.listar(),
-  // HttpStatus.OK);
-  // } catch (Exception e) {
-  // return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-  // }
-  // }
-
-  // @PostMapping("/asistencia-usuario")
-  // public ResponseEntity<AsistenciaUsuarioDTO> agregarAsistenciaUsuario(
-  // @RequestBody AsistenciaUsuarioDTO asistenciaUsuarioDTO) {
-  // try {
-
-  // return new
-  // ResponseEntity<>(this.asistenciaUsuarioService.agregarAsistenciaUsuario(asistenciaUsuarioDTO),
-  // HttpStatus.CREATED);
-  // } catch (Exception e) {
-  // return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-  // }
-  // }
-
-  // @GetMapping("/asistencia-usuario/{cif}")
-  // public ResponseEntity<List<UsuarioEventoResponse>>
-  // buscarAsistenciaUsuario2(@PathVariable Long cif) {
-  // try {
-  // return new
-  // ResponseEntity<>(this.asistenciaUsuarioService.listarEventoPorCif2(cif),
-  // HttpStatus.OK);
-  // } catch (Exception e) {
-  // System.out.println(e.getMessage());
-  // return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-  // }
-  // }
-
 }

@@ -41,24 +41,4 @@ public class AmbienteController {
       return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
-  // @GetMapping("/ambientes")
-  // public ResponseEntity<List<AmbienteDTO>> listar() {
-  // try {
-  // return new ResponseEntity<>(this.ambienteService.listar(), HttpStatus.OK);
-  // } catch (Exception e) {
-  // return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-  // }
-  // }
-
-  // @PostMapping("/ambiente")
-  // public ResponseEntity<AmbienteDTO> agregarAmbiente(@RequestBody AmbienteDTO
-  // ambienteDTO) {
-  // try {
-  // return new
-  // ResponseEntity<>(this.ambienteService.agregarAmbiente(ambienteDTO),
-  // HttpStatus.CREATED);
-  // } catch (Exception e) {
-  // return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-  // }
-  // }
 }
