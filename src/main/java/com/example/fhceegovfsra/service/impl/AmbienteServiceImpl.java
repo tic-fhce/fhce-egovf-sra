@@ -1,6 +1,5 @@
 package com.example.fhceegovfsra.service.impl;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -28,18 +27,17 @@ public class AmbienteServiceImpl implements AmbienteService {
 
   @Transactional
   public List<AmbienteResponseDTO> listar() {
-    System.out.println("listar");
     List<AmbienteResponseDTO> ambientes = ambienteDAO.findAll().stream()
         .map(ambiente -> modelMapper.map(ambiente, AmbienteResponseDTO.class))
         .collect(Collectors.toList());
-    System.out.println(Arrays.toString(ambientes.toArray()));
     return ambientes;
   }
 
   @Transactional
   public AmbienteResponseDTO agregarAmbiente(AmbienteRequestDTO ambienteDTO) {
-    ambienteDAO.save(modelMapper.map(ambienteDTO, Ambiente.class));
-    return modelMapper.map(ambienteDTO, AmbienteResponseDTO.class);
+    Ambiente ambiente = modelMapper.map(ambienteDTO, Ambiente.class);
+    ambienteDAO.save(ambiente);
+    return modelMapper.map(ambiente, AmbienteResponseDTO.class);
   }
 
 }

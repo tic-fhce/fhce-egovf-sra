@@ -54,8 +54,6 @@ public class EventoServiceImpl implements EventoService {
     evento.setRequerimientos(requerimientos);
 
     eventoDAO.save(evento);
-    // EventoResponseDTO eventoResponseDTO = modelMapper.map(evento,
-    // EventoResponseDTO.class);
     return modelMapper.map(evento, EventoResponseDTO.class);
 
   }

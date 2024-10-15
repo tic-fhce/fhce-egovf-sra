@@ -32,6 +32,7 @@ public class EventoController {
     try {
       return new ResponseEntity<>(this.eventoService.agregarEvento(eventoDTO), HttpStatus.OK);
     } catch (Exception e) {
+      System.out.println(e);
       return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }

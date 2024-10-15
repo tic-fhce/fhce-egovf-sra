@@ -10,5 +10,4 @@ import lombok.NoArgsConstructor;
 public class AmbienteRequestDTO {
   private String nombre;
   private int capacidad;
-
 }

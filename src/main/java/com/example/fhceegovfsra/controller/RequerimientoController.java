@@ -42,25 +42,4 @@ public class RequerimientoController {
       return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
-  // @GetMapping("/requerimientos")
-  // public ResponseEntity<List<RequerimientoDTO>> listar() {
-  // try {
-  // return new ResponseEntity<>(this.requerimientoService.listar(),
-  // HttpStatus.OK);
-  // } catch (Exception e) {
-  // return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-  // }
-  // }
-
-  // @PostMapping("/requerimiento")
-  // public ResponseEntity<RequerimientoDTO> agregarRequerimiento(@RequestBody
-  // RequerimientoDTO requerimientoDTO) {
-  // try {
-  // return new
-  // ResponseEntity<>(this.requerimientoService.agregarRequerimiento(requerimientoDTO),
-  // HttpStatus.CREATED);
-  // } catch (Exception e) {
-  // return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-  // }
-  // }
 }

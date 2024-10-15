@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CertificadoResponseDTO {
-
   private Long idCertificado;
   private String nombreEvento;
   private int cargaHoraria;

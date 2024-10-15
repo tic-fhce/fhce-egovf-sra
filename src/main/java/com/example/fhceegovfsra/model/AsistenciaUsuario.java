@@ -8,7 +8,15 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "asiste")
 public class AsistenciaUsuario {
@@ -23,38 +31,5 @@ public class AsistenciaUsuario {
   @ManyToOne
   @JoinColumn(name = "_02id_evento")
   private Evento evento;
-
-  public AsistenciaUsuario(Long id_asistencia_usuario, Long cif, Evento evento) {
-    this.idAsistenciaUsuario = id_asistencia_usuario;
-    this.cif = cif;
-    this.evento = evento;
-  }
-
-  public AsistenciaUsuario() {
-  }
-
-  public Long getIdAsistenciaUsuario() {
-    return idAsistenciaUsuario;
-  }
-
-  public void setIdAsistenciaUsuario(Long id_asistencia_usuario) {
-    this.idAsistenciaUsuario = id_asistencia_usuario;
-  }
-
-  public Long getCif() {
-    return cif;
-  }
-
-  public void setCif(Long cif) {
-    this.cif = cif;
-  }
-
-  public Evento getEvento() {
-    return evento;
-  }
-
-  public void setEvento(Evento evento) {
-    this.evento = evento;
-  }
 
 }

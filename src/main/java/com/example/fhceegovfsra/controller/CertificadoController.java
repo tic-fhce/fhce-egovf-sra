@@ -38,7 +38,6 @@ public class CertificadoController {
     try {
       return new ResponseEntity<>(this.certificadoService.agregarCertificado(certificadoDTO), HttpStatus.CREATED);
     } catch (Exception e) {
-      System.out.println(e);
       return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }

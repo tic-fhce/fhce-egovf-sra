@@ -6,7 +6,15 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "usuarios")
 public class Usuario {
@@ -18,28 +26,4 @@ public class Usuario {
 
   @Column(name = "_01cif")
   private Long cif;
-
-  public Usuario(Long id_usuario, Long cif) {
-    this.idUsuario = id_usuario;
-    this.cif = cif;
-  }
-
-  public Usuario() {
-  }
-
-  public Long getIdUsuario() {
-    return idUsuario;
-  }
-
-  public void setIdUsuario(Long id_usuario) {
-    this.idUsuario = id_usuario;
-  }
-
-  public Long getCif() {
-    return cif;
-  }
-
-  public void setCif(Long cif) {
-    this.cif = cif;
-  }
 }

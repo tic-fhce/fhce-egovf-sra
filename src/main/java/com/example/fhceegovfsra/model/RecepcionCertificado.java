@@ -8,7 +8,15 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "recibe")
 public class RecepcionCertificado {
@@ -23,38 +31,4 @@ public class RecepcionCertificado {
   @ManyToOne
   @JoinColumn(name = "_02id_certificado")
   private Certificado certificado;
-
-  public RecepcionCertificado(Long id_recepcion_certificado, Long cif, Certificado certificado) {
-    this.idRecepcionCertificado = id_recepcion_certificado;
-    this.cif = cif;
-    this.certificado = certificado;
-  }
-
-  public RecepcionCertificado() {
-  }
-
-  public Long getIdRecepcionCertificado() {
-    return idRecepcionCertificado;
-  }
-
-  public void setIdRecepcionCertificado(Long id_recepcion_certificado) {
-    this.idRecepcionCertificado = id_recepcion_certificado;
-  }
-
-  public Long getCif() {
-    return cif;
-  }
-
-  public void setCif(Long cif) {
-    this.cif = cif;
-  }
-
-  public Certificado getCertificado() {
-    return certificado;
-  }
-
-  public void setCertificado(Certificado certificado) {
-    this.certificado = certificado;
-  }
-
 }

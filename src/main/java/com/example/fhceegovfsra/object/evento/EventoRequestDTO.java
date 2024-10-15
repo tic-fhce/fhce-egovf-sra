@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class EventoRequestDTO {
+  private Long idEvento;
   private String nombreEvento;
   private Long cif;
   private Long idAmbiente;
@@ -21,6 +22,5 @@ public class EventoRequestDTO {
   private LocalDate fechaReserva;
   private Long idTipo;
   private List<Long> idsRequerimientos;
-  private Long idEvento;
 
 }

@@ -15,7 +15,15 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "eventos")
 public class Evento {
@@ -66,137 +74,4 @@ public class Evento {
   @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(name = "requerimientos_eventos", joinColumns = @JoinColumn(name = "id_evento"), inverseJoinColumns = @JoinColumn(name = "id_requerimiento"))
   private List<Requerimiento> requerimientos;
-
-  public Evento(Long id_evento, String nombreEvento, Long cif, Ambiente ambiente,
-      LocalDate fechaEvento,
-      LocalTime horaInicio, LocalTime horaFin, LocalDate fechaReserva, Tipo tipo,
-      List<Requerimiento> requerimientos) {
-    this.idEvento = id_evento;
-    this.nombreEvento = nombreEvento;
-    this.idEvento = id_evento;
-    this.cif = cif;
-    this.ambiente = ambiente;
-    this.fechaEvento = fechaEvento;
-    this.horaInicio = horaInicio;
-    this.horaFin = horaFin;
-    this.fechaReserva = fechaReserva;
-    this.tipo = tipo;
-    this.requerimientos = requerimientos;
-  }
-
-  public Evento() {
-  }
-
-  public Long getIdEvento() {
-    return idEvento;
-  }
-
-  public void setIdEvento(Long idEvento) {
-    this.idEvento = idEvento;
-  }
-
-  public String getNombreEvento() {
-    return nombreEvento;
-  }
-
-  public void setNombreEvento(String nombreEvento) {
-    this.nombreEvento = nombreEvento;
-  }
-
-  public Long getCif() {
-    return cif;
-  }
-
-  public void setCif(Long cif) {
-    this.cif = cif;
-  }
-
-  public Ambiente getAmbiente() {
-    return ambiente;
-  }
-
-  public void setAmbiente(Ambiente ambiente) {
-    this.ambiente = ambiente;
-  }
-
-  public String getCite() {
-    return cite;
-  }
-
-  public void setCite(String cite) {
-    this.cite = cite;
-  }
-
-  public String getReferencia() {
-    return referencia;
-  }
-
-  public void setReferencia(String referencia) {
-    this.referencia = referencia;
-  }
-
-  public LocalDate getFechaEvento() {
-    return fechaEvento;
-  }
-
-  public void setFechaEvento(LocalDate fechaEvento) {
-    this.fechaEvento = fechaEvento;
-  }
-
-  public LocalTime getHoraInicio() {
-    return horaInicio;
-  }
-
-  public void setHoraInicio(LocalTime horaInicio) {
-    this.horaInicio = horaInicio;
-  }
-
-  public LocalTime getHoraFin() {
-    return horaFin;
-  }
-
-  public void setHoraFin(LocalTime horaFin) {
-    this.horaFin = horaFin;
-  }
-
-  public int getEstado() {
-    return estado;
-  }
-
-  public void setEstado(int estado) {
-    this.estado = estado;
-  }
-
-  public String getHojaRuta() {
-    return hojaRuta;
-  }
-
-  public void setHojaRuta(String hojaRuta) {
-    this.hojaRuta = hojaRuta;
-  }
-
-  public LocalDate getFechaReserva() {
-    return fechaReserva;
-  }
-
-  public void setFechaReserva(LocalDate fechaReserva) {
-    this.fechaReserva = fechaReserva;
-  }
-
-  public Tipo getTipo() {
-    return tipo;
-  }
-
-  public void setTipo(Tipo tipo) {
-    this.tipo = tipo;
-  }
-
-  public List<Requerimiento> getRequerimientos() {
-    return requerimientos;
-  }
-
-  public void setRequerimientos(List<Requerimiento> requerimientos) {
-    this.requerimientos = requerimientos;
-  }
-
 }
