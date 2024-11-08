@@ -86,6 +86,12 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <mainClass>
+            com.example.fhceegovfsra.FhceEgovfSraApplication
+          </mainClass>
+        </configuration>
+
       </plugin>
     </plugins>
   </build>
