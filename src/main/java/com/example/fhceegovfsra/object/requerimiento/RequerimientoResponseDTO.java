@@ -12,5 +12,4 @@ public class RequerimientoResponseDTO {
   private String cite;
   private String detalle;
   private int estado;
-  private String fecha = "hoy";
 }
