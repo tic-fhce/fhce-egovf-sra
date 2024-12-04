@@ -27,6 +27,7 @@ public class RequerimientoController {
   @GetMapping("/requerimientos")
   public ResponseEntity<List<RequerimientoResponseDTO>> listar() {
     try {
+      System.out.println("RequerimientoController.listar()");
       return new ResponseEntity<>(this.requerimientoService.listar(), HttpStatus.OK);
     } catch (Exception e) {
       return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
