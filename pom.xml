@@ -94,6 +94,7 @@
 
       </plugin>
     </plugins>
+    <finalName>egovf-sra</finalName>
   </build>
 
 </project>
