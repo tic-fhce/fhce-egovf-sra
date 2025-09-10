@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -37,6 +38,14 @@ public class servicioController {
     public ResponseEntity<servicioDtoResponse> addServicio(@RequestBody servicioDtoRequest servicioDtoRequest) {
         try {
 			return new ResponseEntity<>(this.servicioService.addServicio(servicioDtoRequest),HttpStatus.CREATED);
+		}catch (Exception e) {
+			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+    }
+    @PutMapping("/updateServicio")
+    public ResponseEntity<servicioDtoResponse> updateServicio(@RequestBody servicioDtoResponse servicioDtoResponse) {
+        try {
+			return new ResponseEntity<>(this.servicioService.updateServicio(servicioDtoResponse),HttpStatus.OK);
 		}catch (Exception e) {
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}

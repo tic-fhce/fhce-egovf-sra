@@ -8,6 +8,7 @@ import com.fhce.sra.dto.servicioDtoResponse;
 public interface servicioService {
 	List<servicioDtoResponse>getListaServicio(Long idAmbiente);
 	servicioDtoResponse addServicio(servicioDtoRequest servicioDtoRequest);
+	servicioDtoResponse updateServicio(servicioDtoResponse servicioDtoResponse);
 	
 
 }

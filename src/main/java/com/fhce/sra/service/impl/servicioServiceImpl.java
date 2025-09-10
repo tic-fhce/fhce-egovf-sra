@@ -9,9 +9,11 @@ import org.springframework.stereotype.Service;
 
 import com.fhce.sra.dao.inventarioDao;
 import com.fhce.sra.dao.servicioDao;
+import com.fhce.sra.dto.ambienteDtoResponse;
 import com.fhce.sra.dto.inventarioDtoResponse;
 import com.fhce.sra.dto.servicioDtoRequest;
 import com.fhce.sra.dto.servicioDtoResponse;
+import com.fhce.sra.model.ambienteModel;
 import com.fhce.sra.model.servicioModel;
 import com.fhce.sra.service.servicioService;
 
@@ -56,6 +58,13 @@ public class servicioServiceImpl implements servicioService{
     	
     	this.servicioDao.save(servicioModel);
         return(this.modelMapper.map(servicioModel, servicioDtoResponse.class));
+    }
+    @Transactional
+    public servicioDtoResponse updateServicio(servicioDtoResponse servicioDtoResponse) {
+        
+    	servicioModel servicioModel = this.modelMapper.map(servicioDtoResponse, servicioModel.class);
+		this.servicioDao.save(servicioModel);
+        return (this.modelMapper.map(servicioModel, servicioDtoResponse.getClass()));
     }
     
 
